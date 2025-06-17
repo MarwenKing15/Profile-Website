@@ -27,7 +27,7 @@ export default function Footer() {
                 href="https://www.investinhuman.de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-teal-400 transition-colors"
               >
                 www.investinhuman.de
               </a>
@@ -43,7 +43,7 @@ export default function Footer() {
               href="https://www.investinhuman.de"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+              className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors"
             >
               {t("footer.link")}
             </a>

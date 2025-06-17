@@ -14,7 +14,6 @@ export default function Header() {
 
   useEffect(() => {
     let ticking = false
-
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
@@ -24,7 +23,6 @@ export default function Header() {
         ticking = true
       }
     }
-
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -53,6 +51,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo & Name */}
           <div className="flex-shrink-0">
             <div className="flex items-center space-x-3">
               <a
@@ -64,7 +63,7 @@ export default function Header() {
                 <img src="/assets/logo.png" alt="InvestinHuman Logo" className="h-8 w-auto" />
               </a>
               <div className="border-l border-gray-300 h-8"></div>
-              <h1 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+              <h1 className="text-xl font-bold text-gray-900 hover:text-teal-600 transition-colors duration-300">
                 Manel Bannouri
               </h1>
             </div>
@@ -72,72 +71,75 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {["about", "services", "experience", "contact"].map((section) => (
+            {["about", "services", "testimonies", "experience", "contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 relative group"
+                className="text-gray-700 hover:text-teal-600 transition-all duration-300 relative group"
               >
                 {t(`nav.${section}`)}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </nav>
 
-          {/* Language Selector (Desktop Only) */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Select value={language} onValueChange={(value) => setLanguage(value as any)}>
-              <SelectTrigger className="w-32 hover:scale-105 transition-transform duration-300">
-                <Globe className="w-4 h-4 mr-2" />
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {languages.map((lang) => (
-                  <SelectItem key={lang.value} value={lang.value}>
-                    {lang.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+          {/* Language Selector (Desktop) & Mobile Menu Button */}
+          <div className="flex items-center space-x-4">
+            <div className="hidden md:flex">
+              <Select value={language} onValueChange={(value) => setLanguage(value as any)}>
+                <SelectTrigger className="w-32 hover:scale-105 transition-transform duration-300 border-teal-200 focus:ring-teal-500">
+                  <Globe className="w-4 h-4 mr-2" />
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {languages.map((lang) => (
+                    <SelectItem key={lang.value} value={lang.value}>
+                      {lang.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
 
-          {/* Mobile Menu */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform duration-300">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <nav className="flex flex-col space-y-4 mt-8">
-                {['about', 'services', 'experience', 'contact'].map((section) => (
-                  <button
-                    key={section}
-                    onClick={() => scrollToSection(section)}
-                    className="text-left text-gray-700 hover:text-blue-600 transition-colors duration-300 p-2 rounded hover:bg-blue-50"
-                  >
-                    {t(`nav.${section}`)}
-                  </button>
-                ))}
-                {/* Language Selector (Mobile Only) */}
-                <div className="mt-6">
-                  <Select value={language} onValueChange={(value) => setLanguage(value as any)}>
-                    <SelectTrigger className="w-full">
-                      <Globe className="w-4 h-4 mr-2" />
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {languages.map((lang) => (
-                        <SelectItem key={lang.value} value={lang.value}>
-                          {lang.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+            {/* Mobile Menu Sheet */}
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform duration-300">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <nav className="flex flex-col space-y-4 mt-8">
+                  {["about", "services", "testimonies", "experience", "contact"].map((section) => (
+                    <button
+                      key={section}
+                      onClick={() => scrollToSection(section)}
+                      className="text-left text-gray-700 hover:text-teal-600 transition-colors duration-300 p-2 rounded hover:bg-teal-50"
+                    >
+                      {t(`nav.${section}`)}
+                    </button>
+                  ))}
+
+                  {/* Mobile Language Selector */}
+                  <div className="mt-6">
+                    <Select value={language} onValueChange={(value) => setLanguage(value as any)}>
+                      <SelectTrigger className="w-full hover:scale-105 transition-transform duration-300 border-teal-200 focus:ring-teal-500">
+                        <Globe className="w-4 h-4 mr-2" />
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {languages.map((lang) => (
+                          <SelectItem key={lang.value} value={lang.value}>
+                            {lang.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>

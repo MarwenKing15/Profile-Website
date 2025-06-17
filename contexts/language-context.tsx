@@ -17,6 +17,7 @@ const translations = {
     "nav.services": "Services",
     "nav.experience": "Experience",
     "nav.contact": "Contact",
+    "nav.testimonies": "Testimonials",
 
     // Hero
     "hero.title": "Manel Bannouri",
@@ -133,6 +134,7 @@ const translations = {
     "nav.services": "Leistungen",
     "nav.experience": "Erfahrung",
     "nav.contact": "Kontakt",
+    "nav.testimonies": "Kundenstimmen",
 
     // Hero
     "hero.title": "Manel Bannouri",
@@ -252,6 +254,7 @@ const translations = {
     "nav.services": "Services",
     "nav.experience": "Expérience",
     "nav.contact": "Contact",
+    "nav.testimonies": "Témoignages",
 
     // Hero
     "hero.title": "Manel Bannouri",
@@ -371,6 +374,7 @@ const translations = {
     "nav.services": "الخدمات",
     "nav.experience": "الخبرة",
     "nav.contact": "اتصل بي",
+    "nav.testimonies": "آراء العملاء",
 
     // Hero
     "hero.title": "منال بنوري",

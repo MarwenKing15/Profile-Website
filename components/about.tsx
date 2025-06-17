@@ -18,9 +18,9 @@ export default function About() {
             </AnimatedSection>
 
             <AnimatedSection animation="scale" delay={200}>
-              <Card className="bg-blue-50 border-blue-200 hover:shadow-lg transition-shadow duration-500">
+              <Card className="bg-teal-50 border-teal-200 hover:shadow-lg transition-shadow duration-500">
                 <CardContent className="p-8">
-                  <Quote className="w-8 h-8 text-blue-600 mx-auto mb-4 animate-pulse" />
+                  <Quote className="w-8 h-8 text-teal-600 mx-auto mb-4 animate-pulse" />
                   <blockquote className="text-xl sm:text-2xl font-medium text-gray-800 italic text-center">
                     {t("about.quote")}
                   </blockquote>
@@ -47,7 +47,6 @@ export default function About() {
                     <div>
                       <div className="text-sm font-semibold text-gray-900">InvestinHuman</div>
                       <div className="text-xs text-gray-600">{t("about.position")}</div>
-                      {/* <div className="text-xs text-gray-600">Founder & CEO since 2015</div> */}
                     </div>
                   </a>
                 </div>
@@ -55,14 +54,14 @@ export default function About() {
 
               <AnimatedSection animation="slideRight" delay={800}>
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 hover:scale-105 transition-all duration-300">
-                    <div className="text-2xl font-bold text-blue-600 counter" data-target="10">
+                  <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-teal-50 hover:scale-105 transition-all duration-300">
+                    <div className="text-2xl font-bold text-teal-600 counter" data-target="10">
                       10+
                     </div>
                     <div className="text-sm text-gray-600">{t("about.experience")}</div>
                   </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 hover:scale-105 transition-all duration-300">
-                    <div className="text-2xl font-bold text-blue-600 counter" data-target="4">
+                  <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-teal-50 hover:scale-105 transition-all duration-300">
+                    <div className="text-2xl font-bold text-teal-600 counter" data-target="4">
                       4
                     </div>
                     <div className="text-sm text-gray-600">{t("about.languages")}</div>
@@ -80,7 +79,7 @@ export default function About() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 rounded-2xl transition-colors duration-500"></div>
+                <div className="absolute inset-0 bg-teal-600/0 group-hover:bg-teal-600/10 rounded-2xl transition-colors duration-500"></div>
               </div>
             </AnimatedSection>
           </div>

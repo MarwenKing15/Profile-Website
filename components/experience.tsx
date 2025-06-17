@@ -69,7 +69,7 @@ export default function Experience() {
             <Card className="hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1 h-full">
               <CardHeader>
                 <CardTitle className="flex items-center text-xl font-semibold text-gray-900">
-                  <GraduationCap className="w-6 h-6 mr-2 text-blue-600" />
+                  <GraduationCap className="w-6 h-6 mr-2 text-teal-600" />
                   {t("experience.education")}
                 </CardTitle>
               </CardHeader>
@@ -77,7 +77,7 @@ export default function Experience() {
                 {education.map((edu, index) => (
                   <div
                     key={index}
-                    className="border-l-2 border-blue-200 pl-4 hover:border-blue-400 transition-colors duration-300"
+                    className="border-l-2 border-teal-200 pl-4 hover:border-teal-400 transition-colors duration-300"
                   >
                     <h4 className="font-semibold text-gray-900">{edu.degree}</h4>
                     <p className="text-gray-600">{edu.institution}</p>
@@ -93,7 +93,7 @@ export default function Experience() {
             <Card className="hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1 h-full">
               <CardHeader>
                 <CardTitle className="flex items-center text-xl font-semibold text-gray-900">
-                  <Briefcase className="w-6 h-6 mr-2 text-green-600" />
+                  <Briefcase className="w-6 h-6 mr-2 text-slate-600" />
                   {t("experience.work")}
                 </CardTitle>
               </CardHeader>
@@ -101,7 +101,7 @@ export default function Experience() {
                 {experience.map((exp, index) => (
                   <div
                     key={index}
-                    className="border-l-2 border-green-200 pl-4 hover:border-green-400 transition-colors duration-300"
+                    className="border-l-2 border-slate-200 pl-4 hover:border-slate-400 transition-colors duration-300"
                   >
                     <h4 className="font-semibold text-gray-900">{exp.position}</h4>
                     <p className="text-gray-600">{exp.company}</p>
@@ -117,7 +117,7 @@ export default function Experience() {
             <Card className="hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1 h-full">
               <CardHeader>
                 <CardTitle className="flex items-center text-xl font-semibold text-gray-900">
-                  <Award className="w-6 h-6 mr-2 text-purple-600" />
+                  <Award className="w-6 h-6 mr-2 text-slate-700" />
                   {t("experience.skills")}
                 </CardTitle>
               </CardHeader>
@@ -127,8 +127,8 @@ export default function Experience() {
                     <Badge
                       key={index}
                       variant="secondary"
-                      className="text-sm hover:bg-primary-color hover:text-white transition-colors duration-300 cursor-default badge-animated"
-                      data-animation-delay={index * 100}
+                      className="text-sm hover:bg-teal-100 hover:text-teal-800 transition-colors duration-300 cursor-default"
+                      style={{ animationDelay: `${index * 100}ms` }}
                     >
                       {skill}
                     </Badge>

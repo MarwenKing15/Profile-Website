@@ -33,10 +33,17 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      setSubmitStatus("success")
-      setFormData({ name: "", email: "", subject: "", message: "" })
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        setSubmitStatus("error")
+      }
     } catch (error) {
       setSubmitStatus("error")
     } finally {
@@ -93,14 +100,14 @@ export default function Contact() {
                     <Card className="hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1 group">
                       <CardContent className="p-6">
                         <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
-                            <Icon className="w-5 h-5 text-blue-600" />
+                          <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center group-hover:bg-teal-200 transition-colors duration-300">
+                            <Icon className="w-5 h-5 text-teal-600" />
                           </div>
                           <div>
                             <p className="text-sm text-gray-500">{info.label}</p>
                             <a
                               href={info.href}
-                              className="text-gray-900 hover:text-blue-600 transition-colors duration-300"
+                              className="text-gray-900 hover:text-teal-600 transition-colors duration-300"
                               target={info.href.startsWith("http") ? "_blank" : undefined}
                               rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
                             >
@@ -225,31 +232,26 @@ export default function Contact() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white transform hover:scale-105 transition-all duration-300"
+                    className="w-full bg-teal-600 hover:bg-teal-700 text-white transform hover:scale-105 transition-all duration-300"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                        Sending...
+                        {t("contact.sending")}
                       </div>
                     ) : (
-                      <div className="flex items-center">
-                        <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
                         {t("contact.send")}
-                      </div>
+                      </>
                     )}
                   </Button>
 
                   {submitStatus === "success" && (
-                    <div className="p-4 bg-green-50 border border-green-200 rounded-md animate-pulse">
-                      <p className="text-green-800">{t("contact.success")}</p>
-                    </div>
+                    <p className="text-teal-600 font-semibold mt-2">{t("contact.successMessage")}</p>
                   )}
-
                   {submitStatus === "error" && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-md animate-pulse">
-                      <p className="text-red-800">{t("contact.error")}</p>
-                    </div>
+                    <p className="text-red-600 font-semibold mt-2">{t("contact.errorMessage")}</p>
                   )}
                 </form>
               </CardContent>

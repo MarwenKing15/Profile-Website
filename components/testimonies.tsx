@@ -5,7 +5,6 @@ import { Star, Quote } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { AnimatedSection } from "@/components/animated-section"
 
-
 export default function Testimonies() {
   const { t } = useLanguage()
 
@@ -33,7 +32,7 @@ export default function Testimonies() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="testimonies" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <AnimatedSection animation="fadeUp">
@@ -99,4 +98,3 @@ export default function Testimonies() {
     </section>
   )
 }
-
