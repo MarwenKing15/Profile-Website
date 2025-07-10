@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     const { name, email, subject, message } = await request.json();
 
     const apiKey = process.env.RESEND_API_KEY;
-    const recieverEmail = process.env.RECIEVER_EMAIL;
+    const recieverEmail = process.env.EMAIL_USER;
 
     if (!apiKey) {
       return NextResponse.json({ success: false, error: "Missing Resend API key." }, { status: 500 });

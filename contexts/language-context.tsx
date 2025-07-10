@@ -116,8 +116,9 @@ const translations = {
     "contact.subject": "Subject",
     "contact.message": "Message",
     "contact.send": "Send Message",
-    "contact.success": "Thank you! Your message has been sent successfully.",
-    "contact.error": "Sorry, there was an error sending your message. Please try again.",
+    "contact.sending": "Sending...",
+    "contact.successMessage": "Thank you! Your message has been sent successfully.",
+    "contact.errorMessage": "Sorry, there was an error sending your message. Please try again.",
 
     // Footer
     "footer.rights": "All rights reserved.",
@@ -236,8 +237,9 @@ const translations = {
     "contact.subject": "Betreff",
     "contact.message": "Nachricht",
     "contact.send": "Nachricht senden",
-    "contact.success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
-    "contact.error":
+    "contact.sending": "Wird gesendet...",
+    "contact.successMessage": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+    "contact.errorMessage":
       "Entschuldigung, beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
 
     // Footer
@@ -358,8 +360,9 @@ const translations = {
     "contact.subject": "Sujet",
     "contact.message": "Message",
     "contact.send": "Envoyer le Message",
-    "contact.success": "Merci! Votre message a été envoyé avec succès.",
-    "contact.error": "Désolé, une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.",
+    "contact.sending": "Envoi...",
+    "contact.successMessage": "Merci! Votre message a été envoyé avec succès.",
+    "contact.errorMessage": "Désolé, une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.",
 
     // Footer
     "footer.rights": "Tous droits réservés.",
@@ -477,8 +480,9 @@ const translations = {
     "contact.subject": "الموضوع",
     "contact.message": "الرسالة",
     "contact.send": "إرسال الرسالة",
-    "contact.success": "شكراً لك! تم إرسال رسالتك بنجاح.",
-    "contact.error": "عذراً، حدث خطأ في إرسال رسالتك. يرجى المحاولة مرة أخرى.",
+    "contact.sending": "جاري الإرسال...",
+    "contact.successMessage": "شكراً لك! تم إرسال رسالتك بنجاح.",
+    "contact.errorMessage": "عذراً، حدث خطأ في إرسال رسالتك. يرجى المحاولة مرة أخرى.",
 
     // Footer
     "footer.rights": "جميع الحقوق محفوظة.",
