@@ -19,6 +19,7 @@ export default function Services() {
         t("services.companies.desc3"),
         t("services.companies.desc4"),
         t("services.companies.desc5"),
+        t("services.companies.desc6"),
       ],
     },
     {
